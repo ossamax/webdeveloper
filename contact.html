@@ -1,0 +1,174 @@
+<?php
+
+$message_sent = false ;
+if(isset($_POST["submit"])){
+
+    if($_POST["name"] != "" && $_POST["email"] != ""  && $_POST["subject"] != "" && $_POST["message"] != ""){
+        
+        if(filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+            $name = $_POST["name"];
+            $emailFrom = $_POST["email"];
+            $subject = $_POST["subject"];
+            $message = $_POST["message"];
+
+            $mailTo = "devlopossama01@gmail.com";
+            $header ="From :";
+            $header .= $emailFrom;
+            $txt = "You have received an email from ".$name."\n\n".$message;
+
+            mail($mailTo, $subject, $txt, $header);
+
+            $message_sent = true ;
+        }
+     
+
+    }
+
+} 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta
+      name="Ossama zaoute || Front-End Developer"
+      content="Hi, I'm Ossama a freelance web Developer from Morocco. 
+I help brands turn their ideas into high quality products."
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="freelancer"
+      content="freelancer , front-end developer , Morocco , USA, UK"
+    />
+    <!--website links -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://api.iconify.design/fa-solid:code-branch.svg?color=%2334a1cd&height=16"
+    />
+    <link rel="stylesheet" href="contactStyle/style.css" />
+    <title>Contact Front-End Web Developer freelancer</title>
+  </head>
+  <body>
+    <!--header section-->
+    <section class="header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><span>WEB</span>Developer</a>
+        </div>
+        <button><a href="index.html">Return</a></button>
+      </div>
+    </section>
+    <!--hero section-->
+    <section class="hero">
+      <div class="container">
+        <div class="hero_content">
+          <h4>CONTACT ME</h4>
+          <h1>
+            Let's chat.<br />
+            Tell me about your project
+          </h1>
+        </div>
+        <form action="contactform.php" method="POST">
+          <h1>Send me a Message</h1>
+          <div>
+            <label for="name">Full name <span>*</span></label
+            ><br />
+            <input type="text" name="name" id="name" required />
+          </div>
+          <div>
+            <label for="email">Email Address <span>*</span></label
+            ><br />
+            <input type="email" name="email" id="email" required />
+          </div>
+          <div>
+            <label for="subject">Subject <span>*</span></label
+            ><br />
+            <input type="text" name="subject" id="subject" required />
+          </div>
+          <div>
+            <label for="Message">Your Message here<span>*</span></label
+            ><br />
+            <textarea name="message" id="message" required></textarea>
+          </div>
+          <div>
+            <button type="submit" name="submit" id="submitBtn">
+              Send message
+              <span
+                class="iconify"
+                data-icon="carbon:send-alt"
+                data-inline="false"
+                style="color: white"
+              ></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!--contact info section-->
+    <section class="info">
+      <div class="container">
+        <div>
+          <img
+            src="images/phoneSvg-icon.svg"
+            alt="frontend developer phone Number icon"
+          />+212625362204
+        </div>
+        <div>
+          <img
+            src="images/email-icon.svg"
+            alt="frontend developer Email icon"
+          />devlopossama01@gmail.com
+        </div>
+        <div>
+          <img
+            src="images/location-icon.svg"
+            alt="frontend developer Location icon"
+          />Morocco / Agadir 80000
+        </div>
+      </div>
+    </section>
+    <!--footer section-->
+    <section class="footer">
+      <img src="images/footerDotes.svg" class="footerDotes" alt="" />
+      <div class="container">
+        <div class="header">
+          <h5>CONTACT ME</h5>
+          <h1>Got a Project In Your Mind ?</h1>
+        </div>
+        <div class="email">
+          <span
+            class="iconify"
+            data-icon="mdi:email-send"
+            data-inline="false"
+            style="color: #fb5859"
+          ></span>
+          <p>devlifecontact@gmail.com</p>
+        </div>
+        <div class="navContainer">
+          <div class="logo">
+            <a href="index.html"><span>WEB</span>Developer</a>
+          </div>
+          <div class="footerNav">
+            <a href="index.html">About</a>
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </div>
+      <p class="rights">© <span id="year"></span>, all rights are reserved .</p>
+    </section>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script>
+      //footer year
+      var d = new Date();
+      var n = d.getFullYear();
+      document.getElementById("year").innerHTML = n;
+    </script>
+  </body>
+</html>

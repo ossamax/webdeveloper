@@ -1,0 +1,194 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 0.02px solid rgb(240, 240, 240);
+  padding-bottom: 5rem;
+  .container {
+    .hero_content {
+      padding: 5rem 0;
+      position: relative;
+      opacity: 0;
+      bottom: -12rem;
+      animation: animateHeroContent 1s ease-in-out 1s forwards;
+      @media screen and (min-width: 750px) {
+        padding-top: 8rem;
+        width: 500px;
+      }
+      h1 {
+        font-family: "Dosis", sans-serif;
+        font-size: 4.2rem;
+        font-weight: bold;
+        line-height: 0.9;
+        color: $DarkBlue;
+        @media screen and (min-width: 750px) {
+          font-size: 5rem;
+        }
+        span {
+          color: $SkyBlue;
+        }
+      }
+      p {
+        color: #55527c;
+        font-family: karla, sans-serif;
+        margin: 2rem 0 4rem 0;
+        font-size: 1.15rem;
+        @media screen and (min-width: 750px) {
+          font-size: 1.1rem;
+          line-height: 1.5;
+          font-weight: 600;
+        }
+      }
+      button {
+        background-color: $DarkBlue;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        font-size: 1.02rem;
+        font-weight: bold;
+        font-family: karla, sans-serif;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        overflow: hidden;
+        border: 2px solid $DarkBlue;
+        outline: none;
+        a {
+          color: white;
+        }
+        &:hover {
+          box-shadow: 2px 4px 20px rgb(206, 206, 206);
+        }
+      }
+      .CV {
+        background-color: transparent;
+        border: 2px solid #0686c9;
+        margin-left: 0.5rem;
+        color: #0686c9;
+      }
+    }
+    .dots {
+      position: absolute;
+      top: 0rem;
+      right: 4.5rem;
+      width: 90px;
+      height: auto;
+      animation: animateDots 1s ease-in-out 1s forwards;
+      opacity: 0;
+      @media screen and(min-width:750px) {
+        width: 100px;
+        right: 37.5rem;
+      }
+    }
+    .hero_img {
+      width: 650px;
+      position: absolute;
+      z-index: -20;
+      top: 1rem;
+      opacity: 0;
+      right: -20rem;
+      animation: animateHeroImg 1s ease-in-out 1s forwards;
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+      @media screen and (min-width: 1070px) {
+        width: 700px;
+      }
+    }
+    .explore {
+      display: flex;
+      align-items: center;
+      position: relative;
+      animation: animateHeroContent 1s ease-in-out 1s forwards;
+      .circle {
+        width: 22px;
+        height: 35px;
+        border: 2px solid rgb(141, 141, 141);
+        border-radius: 50px;
+        position: relative;
+        .dot {
+          width: 4px;
+          height: 4px;
+          position: absolute;
+          top: 1.2rem;
+          left: 36%;
+          background-color: rgb(184, 184, 184);
+          border-radius: 50%;
+          transition: 0.7s ease-in-out;
+          animation: repeatit 0.5s linear 0s infinite alternate;
+        }
+      }
+      p {
+        font-family: "Karla", sans-serif;
+        color: rgb(141, 141, 141);
+        margin-left: 0.5rem;
+      }
+    }
+    .fixed_arrow {
+      width: 60px;
+      height: 60px;
+      z-index: 100;
+      @media screen and(max-width:400px) {
+        width: 40px;
+        height: 40px;
+        right: 1rem;
+      }
+      border-radius: 50%;
+      border: none;
+      box-shadow: 4px 4px 30px rgba(134, 135, 209, 0.452);
+      justify-content: center;
+      align-items: center;
+      display: none;
+      position: fixed;
+      right: 2rem;
+      bottom: 1rem;
+      background-color: white;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+      span {
+        svg {
+          color: $DarkBlue;
+        }
+      }
+    }
+  }
+}
+
+@keyframes repeatit {
+  from {
+    top: 0.4rem;
+  }
+  to {
+    bottom: 50%;
+  }
+}
+
+//animation for the hero content
+@keyframes animateHeroContent {
+  0% {
+    opacity: 0;
+    bottom: -12rem;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+//dotes animation
+@keyframes animateDots {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+//animate the hero img
+@keyframes animateHeroImg {
+  0% {
+    opacity: 0;
+    right: -20rem;
+  }
+  100% {
+    opacity: 1;
+    right: 0rem;
+  }
+}

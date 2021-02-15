@@ -1,0 +1,118 @@
+.languages {
+  .container {
+    padding: 5rem 0;
+    .header {
+      text-align: center;
+      h5 {
+        color: #747474;
+        @media screen and(min-width:800px) {
+          font-size: 1.2rem;
+        }
+      }
+      h1 {
+        color: $DarkBlue;
+        font-size: 45px;
+        @media screen and(min-width:800px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .icons_container {
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      div {
+        width: 120px;
+        height: 120px;
+        margin: 2rem 1rem;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        @media screen and(min-width:800px) {
+          width: 200px;
+          height: 200px;
+          margin: 1rem 2rem;
+          box-shadow: none;
+          &:hover {
+            box-shadow: 9px 21px 50px rgba(200, 197, 197, 0.25);
+          }
+        }
+
+        svg {
+          font-size: 5rem;
+          transition: 0.3s ease-in-out;
+          @media screen and(min-width:800px) {
+            font-size: 6rem;
+          }
+        }
+        p {
+          color: #dddcdc;
+          transition: 0.3s ease-in-out;
+          font-weight: bold;
+        }
+      }
+      .html:hover {
+        p {
+          color: rgba(245, 144, 62, 0.83);
+        }
+        svg {
+          color: rgba(245, 144, 62, 0.83) !important;
+        }
+      }
+      .css:hover {
+        p {
+          color: rgba(17, 74, 230, 0.83);
+        }
+        svg {
+          color: rgba(17, 74, 230, 0.83) !important;
+        }
+      }
+      .javascript:hover {
+        p {
+          color: rgb(252, 206, 0);
+        }
+        svg {
+          color: rgb(252, 206, 0) !important;
+        }
+      }
+      .react:hover {
+        p {
+          color: rgb(47, 167, 247);
+        }
+        svg {
+          color: rgb(47, 167, 247) !important;
+        }
+      }
+      .bootstrap:hover {
+        p {
+          color: rgb(94, 29, 245);
+        }
+        svg {
+          color: rgb(94, 29, 245) !important;
+        }
+      }
+      .sass:hover {
+        p {
+          color: rgb(211, 19, 93);
+        }
+        svg {
+          color: rgb(211, 19, 93) !important;
+        }
+      }
+      .jquery:hover {
+        p {
+          color: rgb(17, 109, 230);
+        }
+        svg {
+          color: rgb(17, 109, 230) !important;
+        }
+      }
+    }
+  }
+}

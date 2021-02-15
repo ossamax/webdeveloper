@@ -1,0 +1,102 @@
+.skills {
+  padding: 4rem 0 6rem 0;
+  .container {
+    .header {
+      text-align: center;
+      padding: 2.5rem 0;
+      h5 {
+        color: #747474;
+        font-size: 1rem;
+        @media screen and(min-width:800px) {
+          font-size: 1.2rem;
+        }
+      }
+      h1 {
+        color: $DarkBlue;
+        font-size: 45px;
+        @media screen and(min-width:800px) {
+          font-size: 3rem;
+        }
+      }
+    }
+    .skills_container {
+      display: flex;
+      justify-content: space-around;
+      align-items: left;
+      flex-direction: column;
+      flex-wrap: wrap;
+      @media screen and(min-width:800px) {
+        flex-direction: row;
+      }
+      .skill {
+        margin: 1em 0;
+        padding: 2rem 1rem;
+        border-radius: 20px;
+        box-shadow: 10px 10px 100px #35499715;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        @media screen and(min-width:800px) {
+          width: 45%;
+          box-shadow: none;
+          padding: 2rem 2rem;
+          &:hover {
+            box-shadow: 10px 10px 60px #35499715;
+          }
+        }
+        .head_line {
+          display: flex;
+          align-items: center;
+          .icon_box {
+            padding: 1rem 1.3rem 0.7rem 1.3rem;
+            border-radius: 10px;
+            background-color: #7bdffd3b;
+            display: block;
+            @media screen and (min-width: 800px) {
+              padding: 1rem 1.2rem;
+            }
+            svg {
+              font-size: 1.8rem;
+              @media screen and (min-width: 800px) {
+                font-size: 2.2rem;
+              }
+            }
+          }
+          h1 {
+            margin-left: 1rem;
+            color: $DarkBlue;
+            font-size: 1.5rem;
+            font-family: "Dosis", sans-serif;
+            @media screen and (min-width: 800px) {
+              font-size: 1.6rem;
+            }
+          }
+        }
+        p {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: gray;
+          padding-top: 1rem;
+          @media screen and (min-width: 800px) {
+            font-size: 1.1rem;
+          }
+          span {
+            color: $DarkBlue;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+//skills animations
+@keyframes one {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
